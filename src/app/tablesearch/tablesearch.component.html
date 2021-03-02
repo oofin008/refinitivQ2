@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="row">
+    <h3>Search by Category only</h3>
+    <div class="col-md-12 mx-auto">
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          class="form-control"
+          id="search"
+          mdbInput
+        />
+        <label for="search">Search</label>
+      </div>
+    </div>
+  </div>
+  <table mdbTable class="z-depth-1">
+    <thead>
+      <tr>
+        <th
+          *ngFor="let head of headElements; let i = index"
+          scope="col"
+        >
+          {{head}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of elements; let i = index">
+        <th scope="row">{{el.id}}</th>
+        <td class="red-text">{{el.category}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
